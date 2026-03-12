@@ -34,22 +34,23 @@
             txtPhone = new TextBox();
             btnContact = new Button();
             labelMsg = new Label();
+            listViewContacts = new ListView();
             SuspendLayout();
             // 
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Location = new Point(55, 36);
+            labelName.Location = new Point(66, 38);
             labelName.Name = "labelName";
-            labelName.Size = new Size(59, 25);
+            labelName.Size = new Size(52, 25);
             labelName.TabIndex = 0;
-            labelName.Text = "label1";
+            labelName.Text = "Nom";
             // 
             // txtName
             // 
             txtName.Location = new Point(66, 98);
             txtName.Name = "txtName";
-            txtName.Size = new Size(150, 31);
+            txtName.Size = new Size(252, 31);
             txtName.TabIndex = 1;
             // 
             // labelPhone
@@ -57,25 +58,27 @@
             labelPhone.AutoSize = true;
             labelPhone.Location = new Point(67, 184);
             labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(59, 25);
+            labelPhone.Size = new Size(92, 25);
             labelPhone.TabIndex = 2;
-            labelPhone.Text = "label2";
+            labelPhone.Text = "Telephone";
             // 
             // txtPhone
             // 
             txtPhone.Location = new Point(67, 248);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(150, 31);
+            txtPhone.Size = new Size(251, 31);
             txtPhone.TabIndex = 3;
             // 
             // btnContact
             // 
-            btnContact.Location = new Point(86, 374);
+            btnContact.BackColor = SystemColors.HotTrack;
+            btnContact.ForeColor = SystemColors.ButtonFace;
+            btnContact.Location = new Point(206, 561);
             btnContact.Name = "btnContact";
-            btnContact.Size = new Size(112, 34);
+            btnContact.Size = new Size(112, 55);
             btnContact.TabIndex = 4;
-            btnContact.Text = "button1";
-            btnContact.UseVisualStyleBackColor = true;
+            btnContact.Text = "Ajouter";
+            btnContact.UseVisualStyleBackColor = false;
             btnContact.Click += btnContact_Click;
             // 
             // labelMsg
@@ -85,13 +88,23 @@
             labelMsg.Name = "labelMsg";
             labelMsg.Size = new Size(0, 25);
             labelMsg.TabIndex = 5;
-            labelMsg.Click += label1_Click;
+           
+            // 
+            // listViewContacts
+            // 
+            listViewContacts.BackColor = SystemColors.ScrollBar;
+            listViewContacts.Location = new Point(378, 38);
+            listViewContacts.Name = "listViewContacts";
+            listViewContacts.Size = new Size(447, 578);
+            listViewContacts.TabIndex = 6;
+            listViewContacts.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(875, 655);
+            Controls.Add(listViewContacts);
             Controls.Add(labelMsg);
             Controls.Add(btnContact);
             Controls.Add(txtPhone);
@@ -112,5 +125,6 @@
         private TextBox txtPhone;
         private Button btnContact;
         private Label labelMsg;
+        private ListView listViewContacts;
     }
 }
