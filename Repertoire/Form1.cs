@@ -38,6 +38,7 @@ namespace Repertoire
                     {
                         sw.WriteLine($"{txtName.Text},{txtPhone.Text}"); // ecrire les donnees dans le fichier csv
                     }
+                }
             }
 
         }
