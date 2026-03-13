@@ -106,35 +106,30 @@ namespace Repertoire
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             //verifier si un element est bien selectionne dans le listview
-            if (listViewContacts.SelectedItems.Count > 0)
-            {
-                
-                foreach (ListViewItem item in listViewContacts.SelectedItems)
-                {
+            if (listViewContacts.SelectedItems.Count > 0) {
+                // Supprimer du ListView
+                foreach (ListViewItem item in listViewContacts.SelectedItems) {
                     listViewContacts.Items.Remove(item);
                 }
-                
+
                 List<string> lignes = new List<string>();
 
-                
+                // Ajouter l'en-tête du CSV
+                lignes.Add("Name,Phone");
+
+                // Reconstruire le fichier CSV
                 foreach (ListViewItem item in listViewContacts.Items)
                 {
-                    //on reconstruit la ligne 
-                    string ligne = item.Text + "|" + item.SubItems[1].Text;
+                    string ligne = item.Text + "," + item.SubItems[1].Text;
                     lignes.Add(ligne);
                 }
-                
-                System.IO.File.WriteAllLines("ton_fichier.txt", lignes);
-            }
-            else
-            {
-                MessageBox.Show("Veuillez selectionner un contact a supprimer.");
 
-                
-            }
+                    File.WriteAllLines("contact.csv", lignes);
 
-                
-            
+                    MessageBox.Show("Contact supprimé !");
+            } else {
+                MessageBox.Show("Veuillez sélectionner un contact à supprimer.");
+            }                    
         }
     }
 }            
